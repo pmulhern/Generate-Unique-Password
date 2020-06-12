@@ -9,10 +9,8 @@ function generateRandomUpperCase() {
 }
 //RANDOM SYMBOL NOT BASED ON CHAR CODE
 function generateRandomSymbol() {
-    const symbols = "~*$%@#^&!?*'-=/,.{}()[]<>";
-    return symbols[generater(0, symbols.length - 1)];
+    return String.fromCharCode(generater(33, 47));
 }
-
 function generater(min = 0, max = 1) {
     return Math.floor(Math.random() * (max + 1 - min) + min);
 }
@@ -24,7 +22,7 @@ function clickEvent() {
 let password = "";
 
 //CONFIRM "QUESTIONS" - ASKS USER WHICH VALUES THEY WOULD LIKE TO INCORPORATE INTO THE PASSWORD
-var useCap = confirm("Would you like capital Letters?");
+var useCap = confirm("Would you like to include capital letters?");
 console.log(useCap)
 var useLow = confirm("Would you like to include lower case letters?")
 console.log(useLow)
@@ -35,20 +33,19 @@ console.log(useSym)
 
 // THIS IS A CONTROL - FALSE BOOLEANS HAVE A NUMERIC VALUE OF 0 AND TRUE BOOLEANS A NUMERIC VALUE OF 1.  THE USER NEEDS TO PICK AT LEAST ONE VALUE. IF THE SUM OF ALL VALUES = 0 USER HAS NOT SELECTED AT LEAST ONE AND WILL RECEIVE ERROR MESSAGE.
 if(useCap + useLow + useNum + useSym <= 0){
-    alert("You need to select at least one of the following to continue: capital letters, lower case letters, numbers or special characters.")
+    alert("Please select one of the following to continue: capital letters, lower case letters, numbers or special characters. Click Generate Password to start again.")
     return;
 }
 else{
 
 //ASKS USER TO PICK A NUMBER BETWEEN 8 AND 128. THIS CODE PREVENTS USER FROM PICKING A LETTER OR NUMBER OUTSIDE THE REQUIRED RANGE
 do{
-    var length = parseInt(window.prompt("Please enter a number from 8 to 128", ""), 10);
-    }while(isNaN(length) || length > 128 || length < 8);
-    document.getElementById("generate")
-console.log(length)
+    var selection = window.prompt("Please enter a number from 8 to 128");
+    }while(isNaN(selection) || selection > 128 || selection < 8);
+    console.log(selection)
 
 //LOOP THAT IS TAKING ALL OF THE ABOVE INPUTS TO GENERATE THE RANDOM PASSSWORD
-for (let i = 0; i < length; i++) {
+for (let i = 0; i < selection; i++) {
     
     const r = generater(0, 3);
     if (useCap && r === 0) {
