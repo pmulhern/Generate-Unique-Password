@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
-
+/* Main HTML formatting */
 html,
 body,
 .wrapper {
@@ -30,6 +30,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Card formatting */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -71,6 +72,7 @@ header {
   display: block;
   clear: both;
 }
+
 
 .btn {
   border: none;
