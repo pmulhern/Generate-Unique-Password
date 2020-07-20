@@ -67,3 +67,5 @@ document.getElementById('password').innerHTML = password;
 //WRITES PASSWORD TO THE CONSOLE - MOVE THIS OR ADD A SECOND CONSOLE LOG TO LINE 68 TO SEE THE FOR LOOP LAYER EACH CHARACTER OF THE PASSWORD.
 console.log(password);
 }
+
+// End JS Code
